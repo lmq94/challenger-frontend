@@ -1,0 +1,74 @@
+<div class="flex h-screen">
+    <div class="left-section flex items-center">
+      <div class="flex flex-col justify-center items-center">
+        <div class="flex flex-col justify-center items-center mr-44">
+            <p class="text-6xl">Iniciar sesion</p>
+            <p class="px-32 ml-16 mt-5">Nos alegra tenerte de vuelta y estamos listos para atender tus necesiades. Inicia sesion
+                y continua aprovechando al maximo nuestra plataforma.
+            </p>
+        </div>
+            <div class="text-center items-center justify-center">
+                <div class="flex mt-4 items-center">
+                    <img src="assets/icons/integral.svg">
+                    <p class="mx-3">Monitoreo integral</p>
+                </div>
+                <p class="px-5">Administra, monitorea multiples plantas de manera centralizada</p>
+                <div class="flex mt-4 items-center">
+                    <img src="assets/icons/estrella.svg">
+                    <p class="mx-3">Notificaciones en tiempo real</p>
+                </div>
+                <p>Recibi notificaciones en tiempo real sobre las mediciones</p>
+            </div>
+      </div>
+    </div>
+
+    <div class="section-right w-1/2 flex items-center justify-center bg-white">
+      <form (ngSubmit)="onLogin()" class=" w-full max-w-lg">
+        <p class="text-4xl font-bold">Portal de monitoreo</p>
+
+        <p class="text-2xl my-4">Inicia sesion</p>
+
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="email"
+            class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            required
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class ="flex items-center justify-between mt-4">
+        <p>¿Olvidaste tu contraseña?</p>
+            <button
+            type="submit"
+            class="bg-primary-green text-white ml-4 p-4 px-12 rounded-lg hover:bg-blue-700 transition"
+            >
+            Iniciar Sesión
+            </button>
+        </div>
+        <p class="mt-4 text-sm">Protegido con reCAPTCHA y sujeto a la politica de privacidad y condiciones</p>
+        <div class="mt-8">
+          <p class="text-sm">¿No tienes una cuenta? <a routerLink="/register" class="text-blue-500 hover:text-blue-700">Haz clic aquí para registrarte</a></p>
+        </div>
+        <div *ngIf="errorMessage" class="bg-red-600 text-white text-center mt-5">
+          {{ errorMessage }}
+        </div>
+      </form>
+
+
+    </div>
+  </div>

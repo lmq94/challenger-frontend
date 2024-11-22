@@ -1,0 +1,70 @@
+<div class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50 ">
+  <form [formGroup]="workPlaceForm" (ngSubmit)="onSubmit()" class="bg-white p-8 rounded-lg  shadow-lg w-1/2">
+    <p class="mb-4 ml-10 font-bold text-xl">Editar planta</p>
+    <div class="flex items-center justify-center  max-w-6xl">
+      <div class="m-4">
+          <div class="mb-4 flex flex-col">
+            <label for="name" class="text-sm font-medium">Nombre planta</label>
+            <input id="name" formControlName="name" type="text" placeholder="Ingrese nombre" class="border border-gray-300 my-2 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-green" />
+            <div *ngIf="workPlaceForm.get('name')?.hasError('required') && workPlaceForm.get('name')?.touched">
+              El nombre es obligatorio.
+            </div>
+          </div>
+
+          <div class="mb-4 flex flex-col">
+            <label for="readings" class="text-sm font-medium">Lecturas</label>
+            <input id="readings" formControlName="readings" type="number" placeholder="Ingrese" class="border border-gray-300 my-2 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-green" />
+            <div *ngIf="workPlaceForm.get('readings')?.hasError('min') && workPlaceForm.get('readings')?.touched">
+              Las lecturas no pueden ser menores a 0.
+            </div>
+          </div>
+
+          <div class="mb-4 flex flex-col">
+            <label for="yellowAlerts" class="text-sm font-medium">Alertas amarillas</label>
+            <input id="yellowAlerts" formControlName="yellowAlerts" type="text" placeholder="Ingrese" class="border border-gray-300 my-2 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-green" />
+            <div *ngIf="workPlaceForm.get('yellowAlerts')?.hasError('min') && workPlaceForm.get('yellowAlerts')?.touched">
+              Las alertas amarillas no pueden ser menores a 0.
+            </div>
+          </div>
+      </div>
+      <div class="m-4">
+          <div class="mb-4 flex flex-col">
+            <label for="country" class="text-sm font-medium">País</label>
+            <select id="country" formControlName="country" class="p-2 my-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-green">
+              <option value="" selected *ngIf="loading">Cargando países...</option>
+              <option value="">Seleccione país</option>
+              <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+            </select>
+            <div *ngIf="workPlaceForm.get('country')?.hasError('required') && workPlaceForm.get('country')?.touched">
+              El país es obligatorio.
+            </div>
+          </div>
+
+          <div class="mb-4 flex flex-col">
+            <label for="sensors" class="text-sm font-medium">Sensores</label>
+            <input id="sensors" formControlName="sensors" type="text" placeholder="Ingrese" class="border border-gray-300 my-2 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-green" />
+            <div *ngIf="workPlaceForm.get('sensors')?.hasError('min') && workPlaceForm.get('sensors')?.touched">
+              Los sensores no pueden ser menores a 0.
+            </div>
+          </div>
+
+
+          <div class="mb-4 flex flex-col">
+            <label for="redAlerts" class="text-sm font-medium">Alertas rojas</label>
+            <input id="redAlerts" formControlName="redAlerts" type="text" placeholder="Ingrese" class="border border-gray-300 my-2 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-green" />
+            <div *ngIf="workPlaceForm.get('redAlerts')?.hasError('min') && workPlaceForm.get('redAlerts')?.touched">
+              Las alertas rojas no pueden ser menores a 0.
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="flex items-center justify-center gap-4">
+      <button type="button" (click)="onCancel()" class="bg-white text-primary-green px-6 py-2 border border-primary-green rounded-lg hover:bg-gray-100">
+        Cancelar
+      </button>
+      <button class="px-8 py-2 rounded-lg text-white bg-primary-green hover:bg-green-600" type="submit">
+        Editar
+      </button>
+    </div>
+  </form>
+</div>

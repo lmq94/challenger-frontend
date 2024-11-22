@@ -1,0 +1,89 @@
+{
+    "cardsUp":[
+    {
+        "title": "Lecturas ok",
+        "count": 1234,
+        "icon": "assets/icons/ok.svg"
+    },
+    {
+     "title": "Alertas medias",
+        "count": 932,
+        "icon": "assets/icons/amarilla.svg"
+    },
+    {
+     "title": "Alertas Rojas",
+        "count": 932,
+        "icon": "assets/icons/roja.svg"
+    },
+    {
+      "title": "Sensores deshabilitados",
+        "count": 932,
+        "icon": "assets/icons/sensores.svg"
+    }
+  ],
+
+  "cardsDown":[
+            {
+            "title": "Temperatura",
+            "readins":100,
+            "yellowAlerts":20,
+            "redAlerts":3,
+            "icon":"assets/icons/temperatura.svg"
+        },
+
+        {
+            "title": "Presion",
+            "readins":100,
+            "yellowAlerts":20,
+            "redAlerts":3,
+            "icon":"assets/icons/presion.svg"
+            },
+
+        {
+            "title": "Viento",
+            "readins":100,
+             "yellowAlerts":20,
+             "redAlerts":3,
+             "icon":"assets/icons/viento.svg"
+         },
+
+        {
+            "title": "Niveles",
+            "readins":100,
+            "yellowAlerts":20,
+            "redAlerts":3,
+            "icon":"assets/icons/niveles.svg"
+         },
+         {
+            "title": "Energia",
+            "readins":100,
+            "yellowAlerts":20,
+            "redAlerts":3,
+            "icon":"assets/icons/energia.svg"
+         },
+         {
+            "title": "Tension",
+            "readins":100,
+            "yellowAlerts":20,
+            "redAlerts":3,
+            "icon":"assets/icons/tension.svg"
+         },
+         {
+            "title": "Monoxido de carbono",
+            "readins":100,
+            "yellowAlerts":20,
+            "redAlerts":3,
+            "icon":"assets/icons/monoxido-de-carbono.svg"
+         },
+         {
+            "title": "Otros gases",
+            "readins":100,
+            "yellowAlerts":20,
+            "redAlerts":3,
+            "icon":"assets/icons/otros-gases.svg"
+         }            
+
+  ]
+
+  
+}

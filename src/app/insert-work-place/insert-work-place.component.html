@@ -1,0 +1,24 @@
+<div class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
+  <form [formGroup]="workPlaceForm" (ngSubmit)="onSubmit()" class="bg-white p-8 rounded-lg h-96">
+    <p class="mb-4 font-bold">Crear nueva planta</p>
+    <div class="mb-4 my-4 mt-8 flex flex-col">
+      <label for="name">Nombre planta</label>
+      <input id="name" formControlName="name" type="text" placeholder="Ingrese nombre" class=" border border-primary-grey my-2 p-2 rounded-lg" />
+    </div>
+    <div class="mb-4 my-4 flex flex-col">
+      <label for="country">País</label>
+      <select id="country" formControlName="country" class="p-2 my-2 border border-primary-grey rounded-lg">
+        <option value=""  selected *ngIf="loading">Cargando países...</option>
+        <option value="" >Seleccione pais</option>
+        <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+      </select>
+    </div>
+    <div class="flex items-center justify-center">
+      <button type="button" (click)="onCancel()" class="bg-white text-primary-green px-4 border border-primary-green mx-2 py-2 rounded-lg">
+        Cancelar
+      </button>
+      <button class="mx-2 px-8 py-2 rounded-lg text-white bg-primary-green" type="submit" >Crear</button>
+    </div>
+  </form>
+</div>
+

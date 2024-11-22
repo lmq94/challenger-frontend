@@ -1,0 +1,46 @@
+<div class="overflow-x-auto p-5 bg-white">
+    <div class = "flex">
+      <p class ="mx-1 p-1 text-xl font-bold">Plantas</p>
+      <button class ="mx-1 border-2  p-1 px-3 rounded-lg" (click)="openInsertPlantModal()"> + Crear nueva planta</button>
+
+    </div>
+    <table class="table-auto w-full border-t border-gray-300 mt-4">
+      <thead>
+        <tr class="">
+          <th class="text-left px-1 py-2 text-primary-grey">Pais</th>
+          <th class="text-left px-1 py-2 text-primary-grey">Nombre</th>
+          <th class="text-left px-1 py-2 text-primary-grey">Lecturas</th>
+          <th class="text-left px-1 py-2 text-primary-grey">Alertas medias</th>
+          <th class="text-left px-1 py-2 text-primary-grey">Alertas rojas</th>
+          <th class="text-left px-1  py-2 text-primary-grey">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let workplace of workPlaces; let i = index">
+          <td class="px-4 py-2">{{ workplace.country }}</td>
+          <td class="px-4 py-2">{{ workplace.name }}</td>
+          <td class="px-4 py-2">{{ workplace.readings }}</td>
+          <td class="px-4 py-2">{{ workplace.yellowAlerts }}</td>
+          <td class="px-4 py-2">{{ workplace.redAlerts }}</td>
+          <td class="px-4 py-2">
+            <button (click)="toggleMenu(i)" class="focus:outline-none">
+              <img ngSrc="assets/icons/tres-puntos.svg" alt="Icono de tres puntos" height="5" width="5">
+            </button>
+
+            <div *ngIf="visibleMenus[i]" class="absolute right-0 bg-white border border-gray-300 rounded shadow-md mt-2 w-32 z-10">
+              <button (click)="editWorkPlace(workplace)" class="w-full text-left px-4 py-2 text-primary-green hover:bg-gray-100">
+                Editar
+              </button>
+              <button (click)="deleteWorkPlace(workplace)" class="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100">
+                Eliminar
+              </button>
+              <button (click)="closeMenu()" class="w-full text-left px-4 py-2 text-gray-500 hover:bg-gray-100">
+                Cancelar
+              </button>
+            </div>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

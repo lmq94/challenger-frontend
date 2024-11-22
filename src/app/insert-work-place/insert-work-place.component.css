@@ -1,0 +1,12 @@
+.modal-container {
+  @apply relative bg-white p-6 rounded-lg shadow-lg; /* Fondo blanco, padding, bordes redondeados y sombra */
+  top: 20%; /* Ajusta este valor para mover el modal más hacia el centro */
+  left: 50%;
+  transform: translateX(-50%); /* Centrado horizontal */
+  width: 500px; /* Ancho del modal */
+}
+
+/* Fondo semitransparente que cubre toda la pantalla */
+::ng-deep .cdk-overlay-backdrop {
+  @apply bg-gray-500 bg-opacity-50; /* Fondo gris semitransparente */
+}

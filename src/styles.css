@@ -1,0 +1,27 @@
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+    --primary-grey: #B0CAD1;
+    --primary-green:#33A3AA;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  body {
+    background:var(--primary-grey);
+  }
+
+
