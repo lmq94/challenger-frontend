@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {CreateWorkPlaceRequest, WorkPlace} from '../interfaces/work-place';
+import {CreateWorkPlaceRequest, WorkPlace} from '../../interfaces/work-place';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {WorkPlaceService} from '../services/work-place.service';
-import {CountriesService} from '../countries-service';
+import {WorkPlaceService} from '../../services/work-place.service';
+import {CountriesService} from '../../services/countries-service';
 import {NgForOf, NgIf, NgOptimizedImage} from '@angular/common';
 import {MatDialogRef} from '@angular/material/dialog';
 

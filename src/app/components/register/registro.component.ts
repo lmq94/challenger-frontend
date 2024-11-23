@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {UserService} from '../services/user.service';
+import {UserService} from '../../services/user.service';
 import {Router, RouterLink} from '@angular/router';
-import {RegisterUser} from '../interfaces/Register-user';
+import {RegisterUser} from '../../interfaces/Register-user';
 import {NgIf} from '@angular/common';
 import {HttpErrorResponse} from '@angular/common/http';
 

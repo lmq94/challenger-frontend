@@ -1,10 +1,10 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {WorkPlaceService} from '../services/work-place.service';
+import {WorkPlaceService} from '../../services/work-place.service';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {WorkPlace} from '../interfaces/work-place';
+import {WorkPlace} from '../../interfaces/work-place';
 import {NgForOf, NgIf} from '@angular/common';
-import {CountriesService} from '../countries-service';
+import {CountriesService} from '../../services/countries-service';
 
 @Component({
   selector: 'app-edit-work-place',

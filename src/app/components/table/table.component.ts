@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { WorkPlace } from '../interfaces/work-place';
+import { WorkPlace } from '../../interfaces/work-place';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
-import {WorkPlaceService} from '../services/work-place.service';
+import {WorkPlaceService} from '../../services/work-place.service';
 import {MatDialog} from '@angular/material/dialog';
 import {InsertWorkPlaceComponent} from '../insert-work-place/insert-work-place.component';
 import {EditWorkPlaceComponent} from '../edit-work-place/edit-work-place.component';

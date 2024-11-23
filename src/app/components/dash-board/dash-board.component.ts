@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import { TableComponent } from "../table/table.component";
-import { CardData } from '../interfaces/card-data';
-import { CardService } from '../services/card-service';
+import { CardData } from '../../interfaces/card-data';
+import { CardService } from '../../services/card-service';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { SidebarComponent } from "../sidebar/sidebar.component";
-import {WorkPlaceService} from '../services/work-place.service';
+import {WorkPlaceService} from '../../services/work-place.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({

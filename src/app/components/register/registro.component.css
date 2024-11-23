@@ -1,0 +1,11 @@
+
+
+
+@media (max-width: 800px) {
+    .register {
+        width: 100%;
+        left: 0;
+        border-radius: 0;
+        padding: 20px;
+    }
+}
