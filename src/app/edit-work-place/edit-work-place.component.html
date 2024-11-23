@@ -1,9 +1,9 @@
 <div class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50 ">
-  <form [formGroup]="workPlaceForm" (ngSubmit)="onSubmit()" class="bg-white p-8 rounded-lg  shadow-lg w-1/2">
-    <p class="mb-4 ml-10 font-bold text-xl">Editar planta</p>
-    <div class="flex items-center justify-center  max-w-6xl">
-      <div class="m-4">
-          <div class="mb-4 flex flex-col">
+  <form [formGroup]="workPlaceForm" (ngSubmit)="onSubmit()" class="bg-white p-8 rounded-lg  shadow-lg w-auto">
+    <p class="mb-4  ml-4 font-bold text-xl">Editar planta</p>
+    <div class="flex items-center justify-center  w-auto">
+      <div class="m-4 min-w-96">
+          <div class="mb-4 flex flex-col w-auto">
             <label for="name" class="text-sm font-medium">Nombre planta</label>
             <input id="name" formControlName="name" type="text" placeholder="Ingrese nombre" class="border border-gray-300 my-2 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-green" />
             <div *ngIf="workPlaceForm.get('name')?.hasError('required') && workPlaceForm.get('name')?.touched">
@@ -27,7 +27,7 @@
             </div>
           </div>
       </div>
-      <div class="m-4">
+      <div class="m-4 min-w-96">
           <div class="mb-4 flex flex-col">
             <label for="country" class="text-sm font-medium">País</label>
             <select id="country" formControlName="country" class="p-2 my-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-green">

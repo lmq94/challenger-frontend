@@ -7,16 +7,23 @@
     color: white;
     position: relative; 
   }
-  
-  .section-right {
-    position: absolute;  
+
+.section-right {
+    position: absolute;
     width: 55%;
-    height: 100%;  
-    z-index: 1;  
+    height: 100%;
+    z-index: 1;
     border-radius: 20px;
     top: 0;
-    left: 45%;  
-    height: 100%;  
+    left: 45%;
     background-color: white;
+}
 
-  }
+@media (max-width: 640px) {
+    .section-right {
+        width: 100% !important;
+        left: 0;
+        border-radius: 0;
+        padding: 20px;
+    }
+}

@@ -3,7 +3,7 @@ import {CreateWorkPlaceRequest, WorkPlace} from '../interfaces/work-place';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {WorkPlaceService} from '../services/work-place.service';
 import {CountriesService} from '../countries-service';
-import {NgForOf, NgIf} from '@angular/common';
+import {NgForOf, NgIf, NgOptimizedImage} from '@angular/common';
 import {MatDialogRef} from '@angular/material/dialog';
 
 @Component({
@@ -12,7 +12,8 @@ import {MatDialogRef} from '@angular/material/dialog';
   imports: [
     ReactiveFormsModule,
     NgForOf,
-    NgIf
+    NgIf,
+    NgOptimizedImage
   ],
   templateUrl: './insert-work-place.component.html',
   styleUrl: './insert-work-place.component.css'
@@ -21,7 +22,8 @@ export class InsertWorkPlaceComponent {
 
   workPlaceForm: FormGroup;
   countries: string[] = [];
-  loading = true;
+  loading: boolean = true;
+  errorMessage: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -67,7 +69,7 @@ export class InsertWorkPlaceComponent {
         },
       });
     } else {
-      console.log('Formulario inválido');
+      this.errorMessage = "complete el formulario antes de enviar los datos"
     }
   }
 

@@ -1,8 +1,8 @@
 
 
-<div class="flex h-full">
+<div class="flex max-auto overflow-x-auto overflow-y-auto">
     <app-sidebar></app-sidebar>
-    <div class="bg-primary-grey p-12 flex-1">
+    <div class="bg-primary-grey p-16 flex-1">
 
         <div class="flex justify-between my-10">
             <p class= "text-4xl font-bold">Monitoreo global</p>
@@ -38,7 +38,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8 m mt-8">
-                <div *ngFor="let card of cardsDown" class="bg-white p-4 rounded-lg flex flex-col items-center">
+                <div *ngFor="let card of cardsDown" class="bg-white p-4  h-32 rounded-lg flex flex-col items-center">
                 <div class="flex justify-between items-center w-full mb-8">
                     <div>
                         <div class="justify-between items-center w-full mt-auto">
