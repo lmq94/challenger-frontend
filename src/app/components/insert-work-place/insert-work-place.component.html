@@ -4,6 +4,9 @@
     <div class="mb-4 my-4 mt-8 flex flex-col">
       <label for="name">Nombre planta</label>
       <input id="name" formControlName="name" type="text" placeholder="Ingrese nombre" class=" border border-primary-grey my-2 p-2 rounded-lg" />
+        <p *ngIf="workPlaceForm.get('name')?.touched && workPlaceForm.get('name')?.invalid" class="text-red-600 text-sm">
+            Nombre es obligatorio.
+        </p>
     </div>
     <div class="mb-4 my-4 flex flex-col">
       <label for="country">País</label>
@@ -14,6 +17,9 @@
             {{ country }}
         </option>
       </select>
+        <p *ngIf="workPlaceForm.get('country')?.touched && workPlaceForm.get('country')?.invalid" class="text-red-600 text-sm">
+            País es obligatorio.
+        </p>
     </div>
     <div class="flex items-center justify-center">
       <button type="button" (click)="onCancel()" class="bg-white text-primary-green px-4 border border-primary-green mx-2 py-2 rounded-lg">
@@ -21,7 +27,7 @@
       </button>
       <button class="mx-2 px-8 py-2 rounded-lg text-white bg-primary-green" type="submit" >Crear</button>
     </div>
-      <div class="text-red-700 mt-6">
+      <div class="text-red-700 mt-3">
           {{errorMessage}}
       </div>
   </form>

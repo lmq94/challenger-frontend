@@ -5,6 +5,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {WorkPlace} from '../../interfaces/work-place';
 import {NgForOf, NgIf} from '@angular/common';
 import {CountriesService} from '../../services/countries-service';
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-edit-work-place',
@@ -21,6 +22,7 @@ export class EditWorkPlaceComponent implements OnInit {
   workPlaceForm: FormGroup;
   countries: string[] = [];
   loading = true;
+  errorMessage: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -54,8 +56,8 @@ export class EditWorkPlaceComponent implements OnInit {
         next: () => {
           this.dialogRef.close(true);
         },
-        error: (err) => {
-          console.error('Error al actualizar la planta:', err);
+        error: (err:HttpErrorResponse) => {
+         this.errorMessage = err.error;
         },
       });
     }

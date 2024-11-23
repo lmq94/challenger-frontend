@@ -29,7 +29,6 @@ export class LoginComponent {
 
     this.authService.login(this.email, this.password).subscribe({
       next: async (response: string) => {
-        console.log('Login exitoso. Token recibido:', response);
         localStorage.setItem('token', response);
 
         try {

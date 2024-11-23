@@ -31,7 +31,6 @@ export class TableComponent implements OnInit  {
     this.plantService.getPlants().subscribe({
       next: (data) => {
         this.workPlaces = data;
-        console.log('Plantas obtenidas:', data);
       },
       error: (error) => {
         console.error('Error al obtener plantas:', error);

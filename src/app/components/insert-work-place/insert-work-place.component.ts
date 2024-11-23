@@ -5,6 +5,7 @@ import {WorkPlaceService} from '../../services/work-place.service';
 import {CountriesService} from '../../services/countries-service';
 import {NgForOf, NgIf, NgOptimizedImage} from '@angular/common';
 import {MatDialogRef} from '@angular/material/dialog';
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-insert-work-place',
@@ -64,8 +65,9 @@ export class InsertWorkPlaceComponent {
           console.log('WorkPlace creado exitosamente:', response);
           this.dialogRef.close();
         },
-        error: (err) => {
+        error: (err:HttpErrorResponse) => {
           console.error('Error al crear el WorkPlace:', err);
+          this.errorMessage = err.error;
         },
       });
     } else {
