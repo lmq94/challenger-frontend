@@ -6,7 +6,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
 
 
-  if (token) {
+  if (token && !isTokenExpired(token)) {
     return true;
 
   } else {
@@ -17,3 +17,12 @@ export const authGuard: CanActivateFn = (route, state) => {
 };
 
 
+function isTokenExpired(token: string): boolean {
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    const expiration = payload.exp * 1000;
+    return Date.now() > expiration;
+  } catch {
+    return true;
+  }
+}
