@@ -1,10 +1,10 @@
-<div class="overflow-x-auto min-h-96 p-5 bg-white">
+<div class="overflow-x-auto min-h-96 p-5 bg-white rounded-xl">
     <div class = "flex">
       <p class ="mx-1 p-1 text-xl font-bold">Plantas</p>
       <button class ="mx-1 border-2  p-1 px-3 rounded-lg" (click)="openInsertPlantModal()"> + Crear nueva planta</button>
 
     </div>
-    <table class="table-auto w-full border-t border-gray-300 mt-4">
+    <table class="table-auto w-full border-t border-gray-300 mt-4 rounded-lg">
       <thead>
         <tr class="">
           <th class="text-left px-1 py-2 text-primary-grey">Pais</th>
@@ -17,7 +17,13 @@
       </thead>
       <tbody>
         <tr *ngFor="let workplace of workPlaces; let i = index">
-          <td class="px-4 py-2">{{ workplace.country }}</td>
+          <td class=" flex px-4 py-2">
+            <img 
+                [src]="'https://flagcdn.com/w40/' + getCountryCode(workplace.country) + '.png'" 
+                alt="Bandera de {{ workplace.country }}" 
+                class="w-5 h-5 mr-2"
+              />
+            {{ workplace.country }}</td>
           <td class="px-4 py-2">{{ workplace.name }}</td>
           <td class="px-4 py-2">{{ workplace.readings }}</td>
           <td class="px-4 py-2">{{ workplace.yellowAlerts }}</td>

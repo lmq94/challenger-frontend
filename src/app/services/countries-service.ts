@@ -18,4 +18,16 @@ export class CountriesService {
       )
     );
   }
+
+  getCountryCodeMap(): Observable<{ [name: string]: string }> {
+    return this.http.get<any[]>(this.apiUrl).pipe(
+      map((countries) =>
+        countries.reduce((map, country) => {
+          map[country.name.common] = country.cca2.toLowerCase();
+          return map;
+        }, {})
+      )
+    );
+  }
+
 }

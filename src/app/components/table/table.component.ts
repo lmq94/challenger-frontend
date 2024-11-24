@@ -5,6 +5,7 @@ import {WorkPlaceService} from '../../services/work-place.service';
 import {MatDialog} from '@angular/material/dialog';
 import {InsertWorkPlaceComponent} from '../insert-work-place/insert-work-place.component';
 import {EditWorkPlaceComponent} from '../edit-work-place/edit-work-place.component';
+import { CountriesService } from '../../services/countries-service';
 
 @Component({
   selector: 'app-table',
@@ -17,10 +18,12 @@ export class TableComponent implements OnInit  {
 
   workPlaces: WorkPlace[] = [];
   visibleMenus: { [key: number]: boolean } = {};
+  countryCodeMap: { [name: string]: string } = {};
 
   constructor(
     private plantService: WorkPlaceService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private CountriesService:  CountriesService
   ) { }
 
   ngOnInit(): void {
@@ -35,6 +38,10 @@ export class TableComponent implements OnInit  {
       error: (error) => {
         console.error('Error al obtener plantas:', error);
       },
+    });
+
+    this.CountriesService.getCountryCodeMap().subscribe((map) => {
+      this.countryCodeMap = map;
     });
   }
 
@@ -87,6 +94,10 @@ export class TableComponent implements OnInit  {
         console.error('Error al eliminar la planta:', error);
       }
     });
+  }
+
+  getCountryCode(country: string): string {
+    return this.countryCodeMap[country] || 'unknown';
   }
 
 
