@@ -1,21 +1,22 @@
-<div class="flex h-screen">
-    <div class="left-section flex items-center hidden md:flex ">
-      <div class="flex flex-col justify-center items-center">
-        <div class="flex flex-col justify-center items-center">
-            <p class="text-6xl">Iniciar sesion</p>
-            <p class="px-32 ml-16 mt-5">Nos alegra tenerte de vuelta y estamos listos para atender tus necesiades. Inicia sesion
-                y continua aprovechando al maximo nuestra plataforma.
-            </p>
+<div class="flex h-screen items-center">
+    <div class="left-section flex items-center justify-center hidden md:flex ">
+      <div class="flex flex-col ">
+        <div class="flex flex-col ">
+            <p class="text-6xl">Iniciar sesión</p>
+            <p class=" mt-5 max-w-xl break-words">
+              Nos alegra tenerte de vuelta y estamos listos para atender tus necesidades. Inicia sesión
+              y continúa aprovechando al máximo nuestra plataforma.
+          </p>
         </div>
-            <div class="text-center items-center justify-center mr-10">
-                <div class="flex mt-4 items-center">
+            <div class="text-center items-center justify-center">
+              <div class="flex mt-4 items-center">
                     <img src="assets/icons/integral.svg">
-                    <p class="mx-3">Monitoreo integral</p>
+                    <p class="mx-4">Monitoreo integral</p>
                 </div>
-                <p class="px-5">Administra, monitorea multiples plantas de manera centralizada</p>
+                <p class="">Administra, monitorea multiples plantas de manera centralizada</p>
                 <div class="flex mt-4 items-center">
                     <img src="assets/icons/estrella.svg">
-                    <p class="mx-3">Notificaciones en tiempo real</p>
+                    <p class="mx-4">Notificaciones en tiempo real</p>
                 </div>
                 <p>Recibi notificaciones en tiempo real sobre las mediciones</p>
             </div>
@@ -28,28 +29,36 @@
 
         <p class="text-2xl my-4">Inicia sesion</p>
 
-        <div class="mb-4">
+        <div class="my-4">
           <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
           <input
             type="email"
             id="email"
             name="email"
             [(ngModel)]="email"
-            class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            class="mt-1 block w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
             required
           />
         </div>
-
-        <div class="mb-4">
-          <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+        <div class="relative my-4">
           <input
-            type="password"
+            [type]="passwordVisible ? 'text' : 'password'" 
             id="password"
             name="password"
             [(ngModel)]="password"
-            class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            class="block w-full p-4 pr-12 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            placeholder="Contraseña"
             required
           />
+          <span
+            (click)="togglePasswordVisibility()"
+            class="absolute inset-y-0 right-3 flex items-center cursor-pointer"
+          >
+            <i
+              class="bi text-gray-500"
+              [ngClass]="passwordVisible ? 'bi-eye-slash' : 'bi-eye'"
+            ></i>
+          </span>
         </div>
         <div class ="flex items-center justify-between mt-4">
         <p>¿Olvidaste tu contraseña?</p>
@@ -60,7 +69,7 @@
             Iniciar Sesión
             </button>
         </div>
-        <p class="mt-4 text-sm">Protegido con reCAPTCHA y sujeto a la politica de privacidad y condiciones</p>
+        <p class="mt-4 text-sm text-primary-grey">Protegido con reCAPTCHA y sujeto a la <a class="text-primary-green">politica de privacidad</a> y <a class="text-primary-green">condiciones</a></p>
         <div class="mt-8">
           <p class="text-sm">¿No tienes una cuenta? <a routerLink="/register" class="text-blue-500 hover:text-blue-700">Haz clic aquí para registrarte</a></p>
         </div>

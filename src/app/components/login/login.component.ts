@@ -20,8 +20,13 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
   errorMessage: string = '';
+  passwordVisible : boolean = false; 
 
   constructor(private authService: AuthService, private router: Router) { }
+
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+  }
 
   async onLogin() {
     console.log(this.email);
@@ -45,5 +50,6 @@ export class LoginComponent {
 
     });
   }
+
 
 }
