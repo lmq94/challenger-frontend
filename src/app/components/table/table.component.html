@@ -1,4 +1,4 @@
-<div class="overflow-x-auto min-h-96 p-5 bg-white rounded-xl">
+<div class="overflow-x-auto min-h-96 p-5 bg-white rounded-xl table-responsive">
     <div class = "flex">
       <p class ="mx-1 p-1 text-xl font-bold">Plantas</p>
       <button class ="mx-1 border-2  p-1 px-3 rounded-lg" (click)="openInsertPlantModal()"> + Crear nueva planta</button>
@@ -28,12 +28,12 @@
           <td class="px-4 py-2">{{ workplace.readings }}</td>
           <td class="px-4 py-2">{{ workplace.yellowAlerts }}</td>
           <td class="px-4 py-2">{{ workplace.redAlerts }}</td>
-          <td class="px-4 py-2">
+          <td class="px-4 py-2 relative">
             <button (click)="toggleMenu(i)" class="focus:outline-none">
               <img ngSrc="../../../assets/icons/tres-puntos.svg" alt="Icono de tres puntos" height="5" width="5">
             </button>
 
-            <div *ngIf="visibleMenus[i]" class="absolute right-0 bg-white border border-gray-300 rounded shadow-md mt-2 w-32 z-10">
+            <div *ngIf="visibleMenus[i]" class=" absolute top-0 right-0 bg-white border border-gray-300 rounded shadow-md mt-2 w-32 z-10">
               <button (click)="editWorkPlace(workplace)" class="w-full text-left px-4 py-2 text-primary-green hover:bg-gray-100">
                 Editar
               </button>

@@ -1,0 +1,12 @@
+
+
+@media (max-width: 800px) {
+    .cards-responsive{
+        width: 300px;
+    }
+
+    .titulo-responsive{
+        display: flex;
+        flex-direction: column;
+    }
+}

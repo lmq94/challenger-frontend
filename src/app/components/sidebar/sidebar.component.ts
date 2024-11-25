@@ -1,19 +1,25 @@
 import { Component } from '@angular/core';
-import {NgOptimizedImage} from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
   imports: [
-    NgOptimizedImage
+    CommonModule,
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
+  isSidebarOpen = false;
+
 
   constructor(private router: Router) {
+  }
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 
   logOut(): void {

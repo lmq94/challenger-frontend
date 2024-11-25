@@ -1,45 +1,45 @@
 <div class=" w-full h-full flex items-center justify-center bg-primary-grey">
-  <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="w-1/4 register p-4 flex flex-col items-center justify-center h-auto bg-white rounded-lg">
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="w-1/4 register p-4 flex flex-col items-center justify-center h-auto bg-white rounded-xl">
     <p class="text-4xl mb-10 font-bold">Portal de monitoreo</p>
 
     <div class="mb-4 w-full">
-      <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
       <input
         type="email"
         id="email"
         formControlName="email"
-      class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+        placeholder="Correo electronico"
+      class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-green"
       />
     </div>
 
     <div class="mb-4 w-full">
-      <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
       <input
         type="text"
         id="username"
         formControlName="username"
-      class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+        placeholder="Nombre de usuario"
+      class="mt-1 block w-full p-2 border  rounded-lg shadow-sm focus:outline-none focus:outline-none focus:ring-2 focus:ring-primary-green"
       />
     </div>
 
     <div class="mb-4 w-full">
-      <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
       <input
         type="password"
         id="password"
         formControlName="password"
-      class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+        placeholder="Contraseña"
+      class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-green"
       />
     </div>
 
     <div class="flex items-center justify-between">
-      <button type="submit" [disabled]="registerForm.invalid" class="bg-primary-green text-white ml-4 p-4 px-12 rounded-lg hover:bg-blue-700 transition">
+      <button type="submit" [disabled]="registerForm.invalid" class="bg-primary-green text-white ml-4 p-4 px-12 focus:outline-none focus:ring-2 focus:ring-primary-green">
         Registrarse
       </button>
     </div>
     <div class="mt-4">
       <p class="mt-4 text-sm">Protegido con reCAPTCHA y sujeto a la política de privacidad y condiciones</p>
-      <p class="text-sm mt-4">¿Ya dispones de una cuenta? <a routerLink="/login" class="text-blue-500 hover:text-blue-700 mx-1">Haz clic aquí</a>para iniciar sesion</p>
+      <p class="text-sm mt-4">¿Ya dispones de una cuenta? <a routerLink="/login" class="text-primary-green hover:primary-green mx-1">Haz clic aquí</a>para iniciar sesion</p>
     </div>
     <div *ngIf="errorMessage" class="bg-red-600 text-white text-center mt-5">
       {{ errorMessage }}
